@@ -1,0 +1,23 @@
+{% extends "trenhelp/base.html" %}
+{% block body_block %}
+<div class="row">
+<div class="col-md">
+    <h1 class="display-3">All your workouts</h1>
+    <a href="{% url 'trenhelp:trenhelp_add'%}"><button class="btn btn-success" style="width:18rem">Add workout</button></a>
+    {% for training in object_list %}   
+        <div class="card" style="width: 18rem;margin:1rem 1rem 0rem 0rem;">
+            <div class="card-body">
+            <h5 class="card-title">{{training}}</h5>
+            <p class="card-text">{{training.date_created}}</p>
+            <a href="{% url 'trenhelp:trenhelp_detail' pk=training.pk%}" class="btn btn-primary">Details</a>
+            <a href="{% url 'trenhelp:trenhelp_update' pk=training.pk%}" class="btn btn-warning">Update</a>
+            <a href="{% url 'trenhelp:trenhelp_delete' pk=training.pk%}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<div class="col-md">
+    <h1>User:</h1>
+</div>
+</div>
+{% endblock %}
