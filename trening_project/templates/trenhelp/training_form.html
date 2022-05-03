@@ -1,0 +1,11 @@
+{% extends 'trenhelp/base.html' %}
+{% block body_block %}
+
+    <h1 class="display-3">New Workout</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" class="btn btn-success" value="Add">
+    </form>
+
+{% endblock %}

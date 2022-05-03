@@ -1,0 +1,18 @@
+{% extends 'trenhelp/base.html' %}
+
+{% block body_block %}
+<h1 class="display-3">{{ object.name }}</h1>
+<small>{{ object.date }}</small>
+<a href="{% url 'trenhelp:exercise_create' pk=object.pk%}"><button class="btn btn-success" style="width:18rem">Add Exercise</button></a>
+{% for exercise in object.exercises.all %}
+<div class="card" style="width: 18rem;margin:1rem 1rem 0rem 0rem;">
+    <div class="card-body">
+    <h5 class="card-title">{{exercise.name}}</h5>
+    <p class="card-text">{{exercise.sets}}x{{exercise.reps}}</p>
+    <p class="card-text">Weight: {{exercise.weight}}</p>
+    <a href="{% url 'trenhelp:exercise_update' pk=exercise.pk%}" class="btn btn-warning">Update</a>
+    <a href="{% url 'trenhelp:exercise_delete' pk=exercise.pk%}" class="btn btn-danger">Delete</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
