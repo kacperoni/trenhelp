@@ -5,6 +5,7 @@ The main idea behind this app is to get more familiar with Django Class Based Vi
 <ul>
   <li>Python v3.9.1</li>
   <li>Django v4.0.3</li>
+  <li>SQLite</li>
   <li>HTML5</li>
   <li>CSS3</li>
   <li>Bootstrap v5.1.3</li>
