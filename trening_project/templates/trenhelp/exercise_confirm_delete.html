@@ -1,0 +1,8 @@
+{% extends 'trenhelp/base.html' %}
+{% block body_block %}
+    <form method="POST">
+        {% csrf_token %}
+        <p class="fs-4">Are you sure you want delete {{object}}?</p>
+        <input type="submit" class="btn btn-warning" value="Delete">
+    </form>
+{% endblock %}
