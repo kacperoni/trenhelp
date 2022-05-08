@@ -15,10 +15,12 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active fs-3" aria-current="page" href="{% url 'list_view'%}">Workouts</a>
+                    <a class="nav-link active fs-3" href="{% url 'list_view'%}">Workouts</a>
                     <a class="nav-link active fs-3" href="#">About</a>
                 </div>
               </div>
+                <a class="nav-link active fs-3" href="{% url 'login' %}" style="margin:10px; color:black;">Sign in</a>
+                <a class="nav-link active fs-3" href="{% url 'register' %}" style="margin:10px; color:black;">Sign up</a>
             </div>
           </nav>
         <div class="container">

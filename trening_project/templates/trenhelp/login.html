@@ -1,0 +1,12 @@
+{% extends 'trenhelp/base.html'%}
+{% block body_block %}
+    <form method='POST'>
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" class="btn btn-primary" value="Sign in">
+    </form>
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+{% endblock %}
